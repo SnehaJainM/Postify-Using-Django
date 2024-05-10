@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{%load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      </head>
+      <title> {%block title%} Django Project {% endblock%}
+      </title>
+      
+      <body>
+        
+          <nav>
+            
+            
+
+            {% if user.is_authenticated %}
+            <a href="{% url 'posts:new-post' %}">
+              <span role="img" title ="New post" > 🗞️ </span> </a>|
+            
+            <a href="{% url 'posts:list' %}" > 
+                <span title="posts">
+                  📰
+                </span>
+                </a>|
+            
+            <form class="logout" action="{% url 'users:logout' %}" method="post">
+              {% csrf_token %}
+              <button class="buttonlogout" aria-label="User Logout" title="User Logout">
+              <p  class="logout-button"> 👋🏿 </p>
+              </button>
+
+            </form>|
+            {% else %}
+              
+                <a href="{% url 'users:login' %}">
+                  <span title="log in">
+                    😗
+                  </span>
+                </a>|                <a href="{% url 'users:register' %}">
+                  <span title="sign up ">
+                    🪴
+                  </span>
+                  </a>|
+
+            {% endif %}
+              <a href="/about" title="about"> 😊</a>|
+            <a href="/" title="home" class="hometab">🏡 </a> | 
+            
+            
+          </nav>
+<main>  
+   {%block content%}
+   {%endblock%}
+</main>
+      </body>
+      </html>

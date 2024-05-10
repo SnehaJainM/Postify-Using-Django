@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{%block title %}
+Register
+{% endblock %}
+{%block content%}
+
+<h1 class="formHeading">Register Users here: </h1>
+
+<form class="form-validation" action="{% url 'users:register'%}" method="post"><!--appname:url-->
+    {% csrf_token %}
+    {{form}}
+<button class="buttonstyles">Submit</button>
+</form>
+
+
+{% endblock %}
