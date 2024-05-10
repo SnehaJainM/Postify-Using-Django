@@ -1,7 +1,7 @@
 # POSTIFY 📮
 
 Hello all! 😗 
-*POSTIFY** is a Python Django web application allowing users to share blogs with titles, content, and images. Only logged-in users can view and upload posts.
+**POSTIFY** is a Python Django web application allowing users to share blogs with titles, content, and images. Only logged-in users can view and upload posts.
 
 ## Features 🪶
 
